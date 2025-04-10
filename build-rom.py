@@ -12,7 +12,7 @@ csv_reader = csv.DictReader(iter)
 
 # write the words correctly
 for row in csv_reader:
-	words[int(row['ihex'], 16)] = int(row['ohex'], 16)
+	words[int(row['ibin'], 2)] = int(row['obin'], 2)
 
 # output ROM to stdout
 print("v3.0 hex words plain")
@@ -21,6 +21,6 @@ print("v3.0 hex words plain")
 for i in range(int(512 / 16)):
 	line = ""
 	for j in range(16):
-		line += f'{words[i * 16 + j]:0>3x} '
+		line += f'{words[i * 16 + j]:0>4x} '
 	line = line[:-1]
 	print(line)
