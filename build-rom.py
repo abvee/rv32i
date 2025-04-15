@@ -21,6 +21,6 @@ print("v3.0 hex words plain")
 for i in range(int(512 / 16)):
 	line = ""
 	for j in range(16):
-		line += f'{words[i * 16 + j]:0>4x} '
+		line += f'{words[i * 16 + j]:0>5x} '
 	line = line[:-1]
 	print(line)
